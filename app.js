@@ -21,7 +21,7 @@ var port = 5000;
 debug('binding to port', port);
 
 // all environments
-app.set('port', port);
+app.set('port', process.env.PORT || port);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
