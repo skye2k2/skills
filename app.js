@@ -12,8 +12,6 @@ var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var methodOverride = require('method-override');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
 var errorHandler = require('errorhandler');
 var debug = require('debug');
 
@@ -31,8 +29,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride());
-app.use(cookieParser('your secret here'));
-app.use(session());
 
 app.get('/', routes.index);
 app.get('/overview/', routes.overview);
