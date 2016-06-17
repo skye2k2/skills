@@ -1,0 +1,88 @@
+<% include partials/header %>
+
+  <main>
+    <article>
+      <hgroup>
+        <h1><%= title %></h1>
+        <h3></h3>
+      </hgroup>
+
+      <p>The following is a summary of the various projects used to meet requirements in the <a href="https://github.com/fs-webdev/skill-building-program#badges" target="_blank">skills building program</a>.</p>
+
+      <details class="project">
+        <summary><a id="user-content-this-page" class="anchor" href="#this-page" aria-hidden="true"></a>This Page</summary>
+        <div class="content">
+          <a href="/overview#this-page"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> This Page</a>
+
+          <div class="flex-container">
+            <div class="flex-item description-block">
+              <p>This page is a composition of four .ejs files served by node+Express, and utilizes Bootstrap and additional media queries in a Stylus stylesheet, combined with flexbox to format content and navigation responsively (view narrower than 425px at your own risk). HTML5 elements are present, including:</p>
+              <ul>
+                <li>&lt;header&gt;</li>
+                <li>&lt;footer&gt;</li>
+                <li>&lt;nav&gt;</li>
+                <li>&lt;main&gt;</li>
+                <li>&lt;summary&gt;</li>
+              </ul>
+            </div>
+
+            <div class="flex-item demonstrates-block">
+              <p>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">Express</span>
+                <span class="tag">.ejs</span>
+                <span class="tag">flexbox</span>
+                <span class="tag">HTML5</span>
+                <span class="tag">nodejs</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="project">
+        <summary><a id="user-content-movie-picker" class="anchor" href="#movie-picker" aria-hidden="true"></a>Movie Picker</summary>
+        <div class="content">
+          <a href="https://github.com/skye2k2/movie-picker#movie-picker" target="_blank"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> https://github.com/skye2k2/movie-picker</a>
+
+          <div class="flex-container">
+            <div class="flex-item description-block">
+              <p>This is a small Angular application created to intelligently filter an IMDB movie list export, and even choose movie options for you, based on filter criteria.</p>
+            </div>
+            <div class="flex-item demonstrates-block">
+              <p>
+                <span class="tag">Angular</span>
+                <span class="tag">Angular Filters</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">CDN</span>
+                <span class="tag">Documentation</span>
+                <span class="tag">GitHub Demo</span>
+                <span class="tag">Open Source</span>
+                <span class="tag">Responsive Design</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </article>
+  </main>
+
+<script type="text/javascript">
+$(window).on('hashchange', function() {
+  openProjectDetails();
+});
+
+$(document).ready(function(){
+  openProjectDetails();
+});
+
+function openProjectDetails() {
+  if (document.location.hash) {
+    $(".project").attr("open", false);
+    $("#user-content-" + document.location.hash.slice(1)).parents(".project").attr("open", true);
+  }
+}
+</script>
+
+<% include partials/footer %>
