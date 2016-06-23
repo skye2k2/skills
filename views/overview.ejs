@@ -9,6 +9,11 @@
 
       <p>The following is a summary of the various projects used to meet requirements in the <a href="https://github.com/fs-webdev/skill-building-program#badges" target="_blank">skills building program</a>.</p>
 
+      <p>To-Do:</p>
+      <ul>
+        <li>Create a tag searching form that automatically expands matching projects containing the searched-for tag.</li>
+      </ul>
+
       <details class="project">
         <summary><a id="user-content-this-page" class="anchor" href="#this-page" aria-hidden="true"></a>This Page</summary>
         <div class="content">
@@ -65,8 +70,147 @@
         </div>
       </details>
 
+      <details class="project">
+        <summary><a id="user-content-shared-modules" class="anchor" href="#shared-modules" aria-hidden="true"></a>Shared Modules</summary>
+        <div class="content">
+          <a href="https://github.com/fs-eng/ng-shared-components/blob/master/assets/js/modules/fs/fsPersonCard" target="_blank"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> https://github.com/fs-eng/ng-shared-components/blob/master/assets/js/modules/fs/fsPersonCard</a><br />
+          <a href="https://github.com/fs-eng/ng-shared-components/blob/master/assets/js/modules/fs/attributionBlock" target="_blank"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> https://github.com/fs-eng/ng-shared-components/blob/master/assets/js/modules/fs/attributionBlock</a><br />
+          <a href="https://github.com/fs-eng/ng-shared-components/blob/master/assets/js/modules/fs/fsTempleStatus" target="_blank"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> https://github.com/fs-eng/ng-shared-components/blob/master/assets/js/modules/fs/fsTempleStatus</a>
+          <div class="flex-container">
+            <div class="flex-item description-block">
+              <p>I have created and helped create, test, document, and maintain common modules that are re-used by various other modules in FamilySearch applications.</p>
+            </div>
+            <div class="flex-item demonstrates-block">
+              <p>
+                <span class="tag">Angular</span>
+                <span class="tag">Documentation</span>
+                <span class="tag">Modular Code</span>
+                <span class="tag">Unit Testing</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="project">
+        <summary><a id="user-content-testing-performance" class="anchor" href="#testing-performance" aria-hidden="true"></a>Testing Performance</summary>
+        <div class="content">
+          <a href="https://github.com/skye2k2/testing" target="_blank"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> https://github.com/skye2k2/testing</a>
+
+          <div class="flex-container">
+            <div class="flex-item description-block">
+              <p>When there are multiple ways to accomplish identical results, it is generally worth proving out that your chosen implementation is the most performant for your particular situation. This repository tests different implementations of Fibonacci functions.</p>
+<pre><code class="bash">
+  Firefox 47.0.0 LOG: 'Regular Recursive (1):  15 microseconds'
+  Firefox 47.0.0 LOG: 'Regular Iterative (1):  30 microseconds'
+  Firefox 47.0.0 LOG: 'Cached Iterative  (1):  20 microseconds'
+
+  Firefox 47.0.0 LOG: 'Fastest miniscule implementation: Recursive'
+
+  Firefox 47.0.0 LOG: 'Regular Recursive (5):  5 microseconds'
+  Firefox 47.0.0 LOG: 'Regular Iterative (5):  5 microseconds'
+  Firefox 47.0.0 LOG: 'Cached Iterative  (5):  5 microseconds'
+  Firefox 47.0.0 LOG: 'Unable to determine miniscule winner--the fastest
+  tests are equally fast'
+
+  Firefox 47.0.0 LOG: 'Regular Recursive (10):   105 microseconds'
+  Firefox 47.0.0 LOG: 'Regular Iterative (10):   90 microseconds'
+  Firefox 47.0.0 LOG: 'Cached Iterative  (10):   45 microseconds'
+
+  Firefox 47.0.0 LOG: 'Fastest small implementation: Cached Iterative'
+
+  Firefox 47.0.0 LOG: 'Regular Recursive (25):   865 microseconds'
+  Firefox 47.0.0 LOG: 'Regular Iterative (25):   15 microseconds'
+  Firefox 47.0.0 LOG: 'Cached Iterative  (25):   5 microseconds'
+
+  Firefox 47.0.0 LOG: 'Fastest medium implementation: Cached Iterative'
+
+  Firefox 47.0.0 LOG: 'Regular Recursive (45):   6566180 microseconds'
+  Firefox 47.0.0 LOG: 'Regular Iterative (45):   25 microseconds'
+  Firefox 47.0.0 LOG: 'Cached Iterative  (45):   5 microseconds'
+
+  Firefox 47.0.0 LOG: 'Fastest large implementation: Cached Iterative'
+
+  Chrome 51.0.2704 LOG: 'Regular Recursive (1):  40 microseconds'
+  Chrome 51.0.2704 LOG: 'Regular Iterative (1):  60 microseconds'
+  Chrome 51.0.2704 LOG: 'Cached Iterative  (1):  55 microseconds'
+
+  Chrome 51.0.2704 LOG: 'Fastest miniscule implementation: Recursive'
+
+  Chrome 51.0.2704 LOG: 'Regular Recursive (5):  65 microseconds'
+  Chrome 51.0.2704 LOG: 'Regular Iterative (5):  65 microseconds'
+  Chrome 51.0.2704 LOG: 'Cached Iterative  (5):  55 microseconds'
+
+  Chrome 51.0.2704 LOG: 'Fastest miniscule implementation: Cached Iterative'
+
+  Chrome 51.0.2704 LOG: 'Regular Recursive (10):   0 microseconds'
+  Chrome 51.0.2704 LOG: 'Regular Iterative (10):   5 microseconds'
+  Chrome 51.0.2704 LOG: 'Cached Iterative  (10):   0 microseconds'
+  Chrome 51.0.2704 LOG: 'Unable to determine small winner--the fastest
+  tests are equally fast'
+
+  Chrome 51.0.2704 LOG: 'Regular Recursive (25):   1005 microseconds'
+  Chrome 51.0.2704 LOG: 'Regular Iterative (25):   10 microseconds'
+  Chrome 51.0.2704 LOG: 'Cached Iterative  (25):   0 microseconds'
+
+  Chrome 51.0.2704 LOG: 'Fastest medium implementation: Cached Iterative'
+
+  Chrome 51.0.2704 LOG: 'Regular Recursive (45):   9146015 microseconds'
+  Chrome 51.0.2704 LOG: 'Regular Iterative (45):   15 microseconds'
+  Chrome 51.0.2704 LOG: 'Cached Iterative  (45):   5 microseconds'
+
+  Chrome 51.0.2704 LOG: 'Fastest large implementation: Cached Iterative'
+
+  PhantomJS 2.1.1 LOG: 'Regular Recursive (1):   48 microseconds'
+  PhantomJS 2.1.1 LOG: 'Regular Iterative (1):   146 microseconds'
+  PhantomJS 2.1.1 LOG: 'Cached Iterative  (1):   173 microseconds'
+
+  PhantomJS 2.1.1 LOG: 'Fastest miniscule implementation: Recursive'
+
+  PhantomJS 2.1.1 LOG: 'Regular Recursive (5):   6 microseconds'
+  PhantomJS 2.1.1 LOG: 'Regular Iterative (5):   16 microseconds'
+  PhantomJS 2.1.1 LOG: 'Cached Iterative  (5):   18 microseconds'
+
+  PhantomJS 2.1.1 LOG: 'Fastest miniscule implementation: Recursive'
+
+  PhantomJS 2.1.1 LOG: 'Regular Recursive (10):  123 microseconds'
+  PhantomJS 2.1.1 LOG: 'Regular Iterative (10):  4 microseconds'
+  PhantomJS 2.1.1 LOG: 'Cached Iterative  (10):  3 microseconds'
+
+  PhantomJS 2.1.1 LOG: 'Fastest small implementation: Cached Iterative'
+
+  PhantomJS 2.1.1 LOG: 'Regular Recursive (25):  1331 microseconds'
+  PhantomJS 2.1.1 LOG: 'Regular Iterative (25):  9 microseconds'
+  PhantomJS 2.1.1 LOG: 'Cached Iterative  (25):  5 microseconds'
+
+  PhantomJS 2.1.1 LOG: 'Fastest medium implementation: Cached Iterative'
+
+  PhantomJS 2.1.1 LOG: 'Regular Recursive (45):  12213983 microseconds'
+  PhantomJS 2.1.1 LOG: 'Regular Iterative (45):  10 microseconds'
+  PhantomJS 2.1.1 LOG: 'Cached Iterative  (45):  6 microseconds'
+
+  PhantomJS 2.1.1 LOG: 'Fastest large implementation: Cached Iterative'
+
+  LOG: 'For tiny and small implementations, regular recursive runs the fastest. For medium and large implementations, cached iterative runs the fastest.'
+</code></pre>
+            </div>
+            <div class="flex-item demonstrates-block">
+              <p>
+                <span class="tag">Karma/Mocha/Chai/Sinon</span>
+                <span class="tag">Testing Performance</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
     </article>
   </main>
+
+<!-- Code Highlighting Library -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/monokai-sublime.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 <script type="text/javascript">
 $(window).on('hashchange', function() {
