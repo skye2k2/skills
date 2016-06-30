@@ -1,0 +1,31 @@
+---
+engines:
+  csslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  markdownlint:
+    enabled: true
+  nodesecurity:
+    enabled: false
+  requiresafe:
+    enabled: false
+ratings:
+  paths:
+  - "**.css"
+  - "**.js"
+  - "**.ejs"
+exclude_paths:
+- components/
+- node_modules/
+- "**/reports/**/*"
+- "**/test/**/*"
+- temp/
+- "**/vendor/**/*"
