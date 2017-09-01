@@ -31,8 +31,7 @@
   "devDependencies": {
   },
   "engines": {
-    "node": "0.12.x",
-    "npm": "2.7.x"
+    "node": "6"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha",
