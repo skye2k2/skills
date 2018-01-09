@@ -33,6 +33,7 @@ app.use(methodOverride());
 // static paths first, to avoid trying to render css/images as routes
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
 
 app.get('/', routes.index);
 app.get('/overview', routes.overview);

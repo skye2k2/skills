@@ -4,22 +4,40 @@
     <article>
       <hgroup>
         <h1>Congratulations, you found the error page! Feel free to try out other status cats, I mean, codes.</h1>
-        <img class="status-image">
+        <img class="status-image" style="margin: 0 auto;display: inherit;">
+        <h3 class="animated-status-text" style="text-align: center"></h3>
       </hgroup>
 
-      <div class="status-cat-options"></div>
+      <div class="status-cat-options" style="text-align: center"></div>
     </article>
   </main>
 
 <script type="text/javascript">
   var path = '<%- path %>';
   var pathParts = path.substring(path.indexOf("/") + 1).split("/");
+  var animated = pathParts[1] && pathParts[1].indexOf("animated") !== -1;
   var supportedStatusCodes = ["100","101","200","201","202","204","206","207","300","301","302","303","304","305","307","400","401","402","403","404","405","406","408","409","410","411","412","413","414","415","416","417","418","420","421","422","423","424","425","426","429","431","444","451","500","502","503","504","506","507","508","509","511","599"];
-  var statusCode = (supportedStatusCodes.indexOf(pathParts[0]) !== -1)? pathParts[0] : supportedStatusCodes[Math.floor(Math.random()*supportedStatusCodes.length)];
+  var supportedAnimatedStatusCodes = ["102","204","301","307","404","409","410","415","418","420","422","423","429","444","503","507"];
+  var supportedAnimatedStatusCodeText = ["Processing","No Content","Moved Permanently","Temporary Redirect","Not Found","Conflict","Gone","Unexpected Media Type","I'm a Teapot","Enhance Your Calm","Unprocessable Entity","Locked","Too Many Requests","No Response","Service Unavailable","Insufficient Storage"];
 
-  document.querySelector(".status-image").setAttribute("src", "https://http.cat/" + statusCode);
-  for (var i = supportedStatusCodes.length - 1; i >= 0; i--) {
-    document.querySelector(".status-cat-options").insertAdjacentHTML("beforeend", "<a href='/"+ supportedStatusCodes[i] +"'>" + supportedStatusCodes[i] + "</a> ");
+  statusCodeList = (pathParts[1] && animated)? supportedAnimatedStatusCodes : supportedStatusCodes;
+
+  var statusCode = (statusCodeList.indexOf(pathParts[0]) !== -1)? pathParts[0] : statusCodeList[Math.floor(Math.random()*statusCodeList.length)];
+
+  if (animated) {
+    document.querySelector(".status-image").setAttribute("src", "/images/cats/" + statusCode + ".gif");
+    document.querySelector(".animated-status-text").innerHTML = statusCode + " " + supportedAnimatedStatusCodeText[supportedAnimatedStatusCodes.indexOf(statusCode)];
+  } else {
+    document.querySelector(".status-image").setAttribute("src", "https://http.cat/" + statusCode);
+  }
+
+  for (var i = statusCodeList.length - 1; i >= 0; i--) {
+
+    if (animated) {
+      document.querySelector(".status-cat-options").insertAdjacentHTML("beforeend", "<a href='/" + statusCodeList[i] + "/animated'>" + statusCodeList[i] + "</a> ");
+    } else {
+      document.querySelector(".status-cat-options").insertAdjacentHTML("beforeend", "<a href='/" + statusCodeList[i] + "'>" + statusCodeList[i] + "</a> ");
+    }
   }
 </script>
 
