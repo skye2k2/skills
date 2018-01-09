@@ -1,14 +1,41 @@
 <% include partials/header %>
 
+  <style type="text/css">
+    .meme-wrapper {
+      background-color: #000;
+      border: 20px solid #000;
+      display: inherit;
+      margin: 0 auto;
+      max-width: 440px;
+      position: relative;
+    }
+    .status-image {
+      border: 1px double #fff;
+      width: 100%;
+    }
+
+    .animated-status-text {
+      color: #fff;
+      margin: 10px 0 0 0;
+      padding: 5px;
+    }
+
+    .animated-status-text,
+    .status-cat-options {
+      text-align: center;
+    }
+  </style>
   <main>
     <article>
       <hgroup>
         <h1>Congratulations, you found the error page! Feel free to try out other status cats, I mean, codes.</h1>
-        <img class="status-image" style="margin: 0 auto;display: inherit;">
-        <h3 class="animated-status-text" style="text-align: center"></h3>
+        <div class="meme-wrapper">
+          <img class="status-image" style="">
+          <h3 class="animated-status-text"></h3>
+        </div>
       </hgroup>
 
-      <div class="status-cat-options" style="text-align: center"></div>
+      <div class="status-cat-options"></div>
     </article>
   </main>
 
