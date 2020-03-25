@@ -83,8 +83,8 @@ body {
   max-height: 100%;
 }
 /* END BOOTSTRAP OVERRIDES */
-/* Gag breakpoint, for people who try to go narrower than 425px */
-@media (max-width: 425px) {
+/* Gag breakpoint, for people who try to go narrower than 510px */
+@media (max-width: 510px) {
   * {
     display: none !important;
   }

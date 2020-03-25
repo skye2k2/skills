@@ -93,6 +93,99 @@
       </details>
 
       <details class="project">
+        <summary><a id="user-content-picture-work" class="anchor" href="#picture-work" aria-hidden="true"></a>Picture Work</summary>
+        <div class="content">
+          <div class="flex-container">
+            <div class="flex-item description-block">
+              <p>This is an example utilization of picture elements, with webp and a fallback, along with different images for various breakpoints.</p>
+              <picture>
+                <source type="image/webp" srcset="../images/cats/highdef.png 2x, ../images/cats/kittens.webp 1.5x" media="(min-width: 1000px)">
+                <source srcset="../images/cats/takedown.gif" media="(min-width: 800px)">
+                <source srcset="../images/cats/roar.gif" media="(min-width: 620px)">
+                <img src="../images/cats/410.gif" alt="Alt text used regardless of which image is being displayed">
+              </picture>
+              <br><br>
+              <p>This is an example of what never to do with SVG elements.</p>
+              <svg id="svgImage2" width="200" height="80" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#fff" d="M-1-1h246v213H-1z"></path>
+                <g stroke="#000" font-size="18" stroke-width="0">
+                  <text id="svgTheFirst" transform="scale(4)" font-family="'Comic Sans', serif" y="18" x="0">S</text>
+                  <text id="svgTheRest" transform="scale(2)" font-family="'Courier New', Courier, monospace" y="28" x="20" fill="#aaa">kye</text>
+                </g>
+              </svg>
+
+              <style>
+                .filtered {
+                  filter: url(#filter);
+                  -webkit-filter: url(#filter);
+                  color: #16B5FF;
+                  fill: #16B5FF;
+                  font-family: 'Racing Sans One', cursive;
+                  font-size: 110px;
+                }
+              </style>
+              <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="filter" width="150%" height="160%" x="-25%" y="-25%">
+                  <!-- COLORS -->
+                    <feFlood flood-color="#16B5FF" result="COLOR-blue"></feFlood>‚
+                    <feFlood flood-color="#9800FF" result="COLOR-violet"></feFlood>
+                    <feFlood flood-color="#A64DFF" result="COLOR-violet-light"></feFlood>
+                  <!-- COLORS END -->
+
+                  <!-- BOTTOM SPLASH -->
+                    <feTurbulence baseFrequency="0.05" type="fractalNoise" numOctaves="1" seed="2" result="BOTTOM-SPLASH_10"></feTurbulence>
+                    <feGaussianBlur stdDeviation="6.5" in="SourceAlpha" result="BOTTOM-SPLASH_20"></feGaussianBlur>
+                    <feDisplacementMap scale="420" in="BOTTOM-SPLASH_20" in2="BOTTOM-SPLASH_10" result="BOTTOM-SPLASH_30"></feDisplacementMap>
+                    <feComposite operator="in" in="COLOR-blue" in2="BOTTOM-SPLASH_30" result="BOTTOM-SPLASH_40"></feComposite>
+                  <!-- BOTTOM END -->
+
+                  <!-- MIDDLE SPLASH -->
+                    <feTurbulence baseFrequency="0.2" type="fractalNoise" numOctaves="1" seed="1" result="MIDDLE-SPLASH_10"></feTurbulence>
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="0.1" result="MIDDLE-SPLASH_20"></feGaussianBlur>
+                    <feDisplacementMap in="MIDDLE-SPLASH_20" in2="MIDDLE-SPLASH_10" scale="25" result="MIDDLE-SPLASH_30"></feDisplacementMap>
+                    <feComposite in="COLOR-violet-light" in2="MIDDLE-SPLASH_30" operator="in" result="MIDDLE-SPLASH_40"></feComposite>
+                  <!-- MIDDLE END -->
+
+                  <!-- TOP SPLASH -->
+                    <feTurbulence baseFrequency="0.08" type="fractalNoise" numOctaves="1" seed="1" result="TOP-SPLASH_10"></feTurbulence>
+                    <feGaussianBlur stdDeviation="3.5" in="SourceAlpha" result="TOP-SPLASH_20"></feGaussianBlur>
+                    <feDisplacementMap scale="180" in="TOP-SPLASH_20" in2="TOP-SPLASH_10" result="TOP-SPLASH_30"></feDisplacementMap>
+                    <feComposite operator="in" in="COLOR-violet" in2="TOP-SPLASH_30" result="TOP-SPLASH_40"></feComposite>
+                  <!-- TOP END -->
+
+                  <!-- LIGHT EFFECTS -->
+                    <feMerge result="LIGHT-EFFECTS_10">
+                      <feMergeNode in="BOTTOM-SPLASH_40"></feMergeNode>
+                      <feMergeNode in="MIDDLE-SPLASH_40"></feMergeNode>
+                      <feMergeNode in="TOP-SPLASH_40"></feMergeNode>
+                    </feMerge>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0,
+                    0 0 0 0 0,
+                    0 0 0 0 0,
+                    0 0 0 1 0" in="LIGHT-EFFECTS_10" result="LIGHT-EFFECTS_20"></feColorMatrix>
+                    <feGaussianBlur stdDeviation="2" in="LIGHT-EFFECTS_20" result="LIGHT-EFFECTS_30"></feGaussianBlur>
+                    <feSpecularLighting surfaceScale="5" specularConstant=".75" specularExponent="30" lighting-color="#white" in="LIGHT-EFFECTS_30" result="LIGHT-EFFECTS_40">
+                      <fePointLight x="-50" y="-100" z="400"></fePointLight>
+                    </feSpecularLighting>
+                    <feComposite operator="in" in="LIGHT-EFFECTS_40" in2="LIGHT-EFFECTS_20" result="LIGHT-EFFECTS_50"></feComposite>
+                    <feComposite operator="arithmetic" k1="0" k2="1" k3="1" k4="0" in="LIGHT-EFFECTS_10" in2="LIGHT-EFFECTS_50" result="LIGHT-EFFECTS_60"></feComposite>
+                  </filter>
+                  <!-- LIGHT EFFECTS END -->
+                </defs>
+                <text class="filtered" x="50" y="150">Clif</text>
+              </svg>
+            </div>
+            <div class="flex-item demonstrates-block">
+              <p>
+                <span class="tag">HTML Apprentice</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="project">
         <summary><a id="user-content-testing-performance" class="anchor" href="#testing-performance" aria-hidden="true"></a>Testing Performance</summary>
         <div class="content">
           <a href="https://github.com/skye2k2/testing" target="_blank"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> https://github.com/skye2k2/testing</a>

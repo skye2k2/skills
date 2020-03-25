@@ -28,8 +28,7 @@
     "twix": "0.8.1",
     "ua-parser-js": "0.7.10"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "engines": {
     "node": "6"
   },
